@@ -1,26 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@page import="java.util.List"%>
+<%@page import="com.pack.EmployeeJSP.EmployeeConfig"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Employee JSP</title>
+<meta charset="UTF-8">
+<title>Employee List</title>
 </head>
 <body>
-
-<!--  
-	<c:forEach items="${object}" var="element">
-		<tr>
-			<td>${element.getId}</td>
-			<td>${element.getName}</td>
-			<td>${element.getAge}</td>
-			<td>${element.getDepartment}</td>
-			<td>${element.getSalary}</td>
-		</tr>
-	</c:forEach>-->
-	<h2>${object}</h2>
-
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Department</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%
+                List<EmployeeConfig> list = (List<EmployeeConfig>) request.getAttribute("object");
+                if (list != null) {
+                    for (EmployeeConfig employee : list) {
+            %>
+			<tr>
+				<td><%= employee.getId() %></td>
+				<td><%= employee.getName() %></td>
+				<td><%= employee.getAge() %></td>
+				<td><%= employee.getDepartment() %></td>
+				<td><%= employee.getSalary() %></td>
+			</tr>
+			<%
+                    }
+                } else {
+            %>
+			<tr>
+				<td colspan="5">No data available</td>
+			</tr>
+			<%
+                }
+            %>
+		</tbody>
+	</table>
 </body>
 </html>

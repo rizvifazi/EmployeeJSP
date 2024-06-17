@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmployeeDAO {
 
-	static List<EmployeeConfig> employees = new ArrayList<EmployeeConfig>();
+	private static List<EmployeeConfig> employees = new ArrayList<EmployeeConfig>();
 	
 	static {
 		employees.add(new EmployeeConfig(1L, "Ram Kumar", 28, "HR", 45000.0));

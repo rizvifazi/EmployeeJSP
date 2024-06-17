@@ -22,7 +22,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<!-- Excluding Tomcat-->
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
@@ -49,10 +48,11 @@
 			<scope>test</scope>
 		</dependency>
 
+
 		<!-- Include Jetty-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
 
 		<!-- Include Jetty for JSP-->
@@ -61,14 +61,6 @@
 			<artifactId>apache-jsp</artifactId>
 			<version>11.0.21</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-
 
 	</dependencies>
 
